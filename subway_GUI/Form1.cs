@@ -182,6 +182,7 @@ namespace subway_GUI
                 return;
             }
             int want2Height = this.pictureBox1.Height + changeSize;
+            want2Height = want2Height > heightMax ? heightMax : want2Height;
             int want2Width = (int)(overrideNum * want2Height);
             picture_WheelNotOut(pictureBox1, want2Width, want2Height);
         }
@@ -193,6 +194,7 @@ namespace subway_GUI
                 return;
             }
             int want2Height = this.pictureBox1.Height - changeSize;
+            want2Height = want2Height > heightMax ? heightMax : want2Height;
             int want2Width = (int)(overrideNum * want2Height);
             picture_WheelNotOut(pictureBox1, want2Width, want2Height);
         }
