@@ -348,6 +348,7 @@ namespace subway_GUI
             t.IsBackground = true;
             button4.Visible = true;
             button5.Visible = true;
+            panel4.Visible = true;
         }
         private void exchange(int[,] result)
         {
@@ -715,6 +716,7 @@ namespace subway_GUI
         {
             button4.Visible = false;
             button5.Visible = false;
+            panel4.Visible = false;
             clear();
             HLmark = true;
         }
@@ -751,6 +753,7 @@ namespace subway_GUI
             threadCartoon = false;
             button4.Visible = false;
             button5.Visible = false;
+            panel4.Visible = false;
             clear();
         }
 
