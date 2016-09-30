@@ -48,6 +48,7 @@ namespace subway_GUI
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -55,6 +56,7 @@ namespace subway_GUI
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,7 +65,7 @@ namespace subway_GUI
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(182, 55);
+            this.panel1.Size = new System.Drawing.Size(181, 55);
             this.panel1.TabIndex = 0;
             // 
             // radioButton2
@@ -92,7 +94,7 @@ namespace subway_GUI
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 71);
+            this.textBox1.Location = new System.Drawing.Point(9, 14);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(65, 21);
             this.textBox1.TabIndex = 1;
@@ -100,16 +102,13 @@ namespace subway_GUI
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.panel5);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(187, 558);
+            this.groupBox1.Size = new System.Drawing.Size(182, 558);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -126,29 +125,36 @@ namespace subway_GUI
             // 
             this.textBox3.AcceptsReturn = true;
             this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Cursor = System.Windows.Forms.Cursors.No;
             this.textBox3.Font = new System.Drawing.Font("宋体", 13F);
-            this.textBox3.Location = new System.Drawing.Point(0, 248);
+            this.textBox3.Location = new System.Drawing.Point(0, 242);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(183, 306);
+            this.textBox3.Size = new System.Drawing.Size(183, 316);
             this.textBox3.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(54, 108);
+            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(51, 51);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "搜索";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 74);
+            this.label1.Location = new System.Drawing.Point(80, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 12);
             this.label1.TabIndex = 3;
@@ -156,14 +162,14 @@ namespace subway_GUI
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(107, 71);
+            this.textBox2.Location = new System.Drawing.Point(104, 14);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(65, 21);
             this.textBox2.TabIndex = 2;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(840, 557);
@@ -179,7 +185,7 @@ namespace subway_GUI
             // 
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(188, 1);
+            this.panel2.Location = new System.Drawing.Point(182, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(840, 557);
             this.panel2.TabIndex = 4;
@@ -190,34 +196,48 @@ namespace subway_GUI
             this.panel3.Controls.Add(this.button2);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(35, 72);
+            this.panel3.Size = new System.Drawing.Size(35, 70);
             this.panel3.TabIndex = 4;
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("宋体", 20F);
-            this.button3.Location = new System.Drawing.Point(0, 37);
+            this.button3.Location = new System.Drawing.Point(0, 35);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(35, 35);
             this.button3.TabIndex = 1;
             this.button3.Text = "-";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("宋体", 20F);
             this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(35, 35);
             this.button2.TabIndex = 0;
             this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(0, 35);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 35);
@@ -229,7 +249,11 @@ namespace subway_GUI
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(0, 0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(97, 35);
@@ -248,6 +272,17 @@ namespace subway_GUI
             this.panel4.Size = new System.Drawing.Size(97, 70);
             this.panel4.TabIndex = 7;
             this.panel4.Visible = false;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Location = new System.Drawing.Point(1, 57);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(182, 93);
+            this.panel5.TabIndex = 7;
             // 
             // Form1
             // 
@@ -272,6 +307,8 @@ namespace subway_GUI
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -296,6 +333,7 @@ namespace subway_GUI
         private Button button4;
         private Button button5;
         private Panel panel4;
+        private Panel panel5;
     }
 }
 

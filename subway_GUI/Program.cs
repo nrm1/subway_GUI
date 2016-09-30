@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -108,9 +109,31 @@ namespace subway_GUI
         {
             int line = -1;
             int idInLine = 0;
+            //static string exePath1 = System.Environment.CurrentDirectory;
+            string exePath2 = new DirectoryInfo("../../").FullName;
+            string exePath1 = System.Environment.CurrentDirectory;
+            //exePath1 + @"\beijing-subway_GUI\"
             //Station[] station = new Station[300];
             XmlDocument xml = new XmlDocument();
-            xml.Load("station.xml");
+            try
+            {
+                xml.Load(exePath1 + @"\beijing-subway_GUI\station.xml");
+            }
+            catch(Exception e)
+            {
+                try
+                {
+                    xml.Load(exePath2 + @"\beijing-subway_GUI\station.xml");
+                }
+                catch(Exception e1)
+                {
+                    AllocConsole();
+                    Console.WriteLine("Input File Invalid");
+                    Console.ReadKey();
+                    //while (true) ;
+                    return;
+                }
+            }
             XmlElement root = xml.DocumentElement;
             XmlNodeList listLine = root.GetElementsByTagName("Line");
 
@@ -202,8 +225,20 @@ namespace subway_GUI
                     {
                         if (station[i].getName() == args[1])
                             start_id = i;
-                        else if (station[i].getName() == args[2])
+                        if (station[i].getName() == args[2])
                             end_id = i;
+                    }
+                    if(start_id == -1 || end_id == -1)
+                    {
+                        Console.WriteLine("Name Of Station Is Not Exist!");
+                        Console.ReadKey();
+                        return;
+                    }
+                    else if(start_id == end_id)
+                    {
+                        Console.WriteLine("Information Of Station Is Invalid!");
+                        Console.ReadKey();
+                        return;
                     }
                     int[,] result;
                     Search(0, start_id, end_id,out result);
@@ -221,6 +256,7 @@ namespace subway_GUI
                         if (result[tempint++, 0] == end_id)
                             break;
                     }
+                    Console.ReadKey();
                 }
                 else if(args[0] == "-c")
                 {
@@ -230,8 +266,20 @@ namespace subway_GUI
                     {
                         if (station[i].getName() == args[1])
                             start_id = i;
-                        else if (station[i].getName() == args[2])
+                        if (station[i].getName() == args[2])
                             end_id = i;
+                    }
+                    if (start_id == -1 || end_id == -1)
+                    {
+                        Console.WriteLine("Name Of Station Is Not Exist!");
+                        Console.ReadKey();
+                        return;
+                    }
+                    else if (start_id == end_id)
+                    {
+                        Console.WriteLine("Information Of Station Is Invalid!");
+                        Console.ReadKey();
+                        return;
                     }
                     int[,] result;
                     Search(1, start_id, end_id, out result);
@@ -249,20 +297,12 @@ namespace subway_GUI
                         if (result[tempint++, 0] == end_id)
                             break;
                     }
+                    Console.ReadKey();
                 }
             }
-            if (args.Length == 0)
+            else if (args.Length == 0)
             {
                 AllocConsole();
-            }
-            if (args.Length == 1 && args[0] == "-g")
-            {
-                GUI gui = new GUI();
-                gui.showGUI();
-            }
-            else
-            {
-
                 while (true)
                 {
                     string nameIn;
@@ -285,6 +325,18 @@ namespace subway_GUI
                         }
                     }
                 }
+            }
+            else if (args.Length == 1 && args[0] == "-g")
+            {
+                GUI gui = new GUI();
+                gui.showGUI();
+            }
+            else
+            {
+                AllocConsole();
+                Console.WriteLine("Input Parameter Invalid");
+                Console.ReadKey();
+                return;
             }
         }
 
